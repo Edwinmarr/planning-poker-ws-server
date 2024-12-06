@@ -1,0 +1,5 @@
+dependencies {
+    
+    // los casos de uso se construyen usando el modelo definido en el modulo:
+    implementation project(':domain-model')
+}

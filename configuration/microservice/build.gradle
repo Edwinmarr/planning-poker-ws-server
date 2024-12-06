@@ -1,0 +1,15 @@
+apply plugin: 'org.springframework.boot'
+
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
+    // ----------- MODULOS DE LA APLICACION --------------
+    //Modulos propios de ESTA aplicacion 
+    implementation project(":data-jpa-repository")
+    implementation project(":domain-model")
+    implementation project(":domain-usecase")
+    implementation project(":entrypoints-websocket")
+
+    
+}
