@@ -1,18 +1,20 @@
 package co.com.edwinmarrugo.planningpoker.microservice;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 
 import java.text.NumberFormat;
 
 @SpringBootApplication
-@EnableCaching
 @EnableAutoConfiguration
 public class MainApplication {
+    private static final Logger log = LoggerFactory.getLogger(MainApplication.class);
+
     public static void main(String[] args) {
         SpringApplication.run(MainApplication.class, args);
     }
@@ -29,12 +31,14 @@ public class MainApplication {
         final long freeMemory = runtime.freeMemory();
         final long mb = 1024L * 1024L;
         final String mega = " MB";
-        System.out.println("========================== Memory Info ==========================");
-        System.out.println("Free memory: " + format.format(freeMemory / mb) + mega);
-        System.out.println("Allocated memory: " + format.format(allocatedMemory / mb) + mega);
-        System.out.println("Max memory: " + format.format(maxMemory / mb) + mega);
-        System.out.println("Total free memory: " + format.format((freeMemory + (maxMemory - allocatedMemory)) / mb) + mega);
-        System.out.println("=================================================================");
+        if (log.isInfoEnabled()) {
+            log.info("========================== Memory Info ==========================");
+            log.info("Free memory: {}",format.format(freeMemory / mb) + mega);
+            log.info("Allocated memory: {}",format.format(allocatedMemory / mb) + mega);
+            log.info("Max memory: {}",format.format(maxMemory / mb) + mega);
+            log.info("Total free memory: {}",format.format((freeMemory + (maxMemory - allocatedMemory)) / mb) + mega);
+            log.info("=================================================================");
+        }
     }
 
     @Bean

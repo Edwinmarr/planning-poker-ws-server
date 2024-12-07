@@ -1,13 +1,9 @@
-configurations {
-    implementation {
-        exclude module: "spring-boot-starter-logging"
-    }
-}
+
 
 dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-websocket'
-
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation project(':domain-model')
     implementation project(':domain-usecase')
 

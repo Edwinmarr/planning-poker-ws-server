@@ -1,2 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-co.com.edwinmarrugo.planningpoker.websocket.config.DemoRestAutoConfiguration

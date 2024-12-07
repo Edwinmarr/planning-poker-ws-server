@@ -3,7 +3,7 @@ apply plugin: 'org.springframework.boot'
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-websocket'
-
+    implementation 'org.springframework.boot:spring-boot-starter-web'
     // ----------- MODULOS DE LA APLICACION --------------
     //Modulos propios de ESTA aplicacion 
     implementation project(":data-jpa-repository")

@@ -1,5 +1,6 @@
 package co.com.edwinmarrugo.planningpoker.microservice;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -11,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  *
  */
 @Configuration
+@RequiredArgsConstructor
 public class UseCaseConfiguration {
-
 
 }

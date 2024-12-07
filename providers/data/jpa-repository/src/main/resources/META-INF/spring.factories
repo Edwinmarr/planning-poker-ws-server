@@ -1,1 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=co.com.edwinmarrugo.planningpoker.persistence.config.TaskJpaRepositoryConfiguration
