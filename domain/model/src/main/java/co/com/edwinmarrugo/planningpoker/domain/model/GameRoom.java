@@ -1,14 +1,12 @@
 package co.com.edwinmarrugo.planningpoker.domain.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @Builder
+@NoArgsConstructor
 public class GameRoom {
     private String id;
     private String name;

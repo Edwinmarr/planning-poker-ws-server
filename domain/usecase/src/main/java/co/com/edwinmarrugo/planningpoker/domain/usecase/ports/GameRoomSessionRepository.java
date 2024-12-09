@@ -6,5 +6,7 @@ import java.util.Optional;
 
 public interface GameRoomSessionRepository {
     Optional<GameRoom> createGameRoom(GameRoom gameRoom);
+    Optional<GameRoom> findGameRoom(String id);
+    void deleteGameRoom(String id);
 
 }

@@ -1,6 +1,9 @@
 package co.com.edwinmarrugo.planningpoker.microservice;
 
+import co.com.edwinmarrugo.planningpoker.domain.usecase.CreateRoomUseCase;
+import co.com.edwinmarrugo.planningpoker.domain.usecase.ports.GameRoomSessionRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -14,5 +17,10 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @RequiredArgsConstructor
 public class UseCaseConfiguration {
+    private final GameRoomSessionRepository gameRoomSessionRepository;
+    @Bean
+    public CreateRoomUseCase createRoomUseCase() {
+        return new CreateRoomUseCase(gameRoomSessionRepository);
+    }
 
 }
